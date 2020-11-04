@@ -49,4 +49,4 @@ API_KEY=yourapikey
 API_SECRET=yourapisecret
 ```
 
-Then run `yarn simple-keeper` (or whatever script you want to execute). This will run the script on your local workstation using your Defender Relayer.
+Then run `yarn simple-keeper` (or whatever script you want to execute). This will run the script on your local workstation using your Defender Relayer for sending `work` transactions to the keep3r network.
