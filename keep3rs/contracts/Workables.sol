@@ -17,12 +17,12 @@ contract Workable {
   }
 }
 
-contract UniswapOracleV2 is Workable {
+contract UniswapV2SlidingOracle is Workable {
   function work() public {
     _work();
   }
   
-  function updateable() public view returns (bool) {
+  function workable() public view returns (bool) {
     return needsWork;
   }
 }

@@ -3,7 +3,7 @@ const { DefenderRelaySigner } = require('defender-relay-client/lib/ethers');
 
 // ABIs for jobs and registry (contain only the methods needed, not the full ABIs of the contracts)
 const ABIs = {
-  UniswapOracleV2: [{"inputs":[],"name":"updateable","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"work","outputs":[],"stateMutability":"nonpayable","type":"function"}],
+  UniswapV2SlidingOracle: [{"inputs":[],"name":"workable","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"work","outputs":[],"stateMutability":"nonpayable","type":"function"}],
   HegicPoolKeep3r: [{"inputs":[],"name":"workable","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"claimRewards","outputs":[],"stateMutability":"nonpayable","type":"function"}],
   YearnV1EarnKeep3r: [{"inputs":[],"name":"work","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"workable","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"}],
   Registry: [{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"keepers","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"bonding","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"bond","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"address","name":"","type":"address"}],"name":"bondings","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"bonding","type":"address"}],"name":"activate","outputs":[],"stateMutability":"nonpayable","type":"function"}],
@@ -11,9 +11,9 @@ const ABIs = {
 
 // Definition for all jobs to execute
 const Jobs = [
-  { name: 'UniswapOracleV2',   address: '0x127a2975c4E1c75f1ed4757a861bbd42523DB035', workableFn: 'updateable', workFn: 'work' },
-  { name: 'HegicPoolKeep3r',   address: '0x5DDe926b0A31346f2485900C5e64c2577F43F774', workableFn: 'workable',   workFn: 'claimRewards' },
-  { name: 'YearnV1EarnKeep3r', address: '0xe7F4ab593aeC81EcA754Da1B3B7cE0C42a13Ec0C', workableFn: 'workable',   workFn: 'work' },
+  { name: 'UniswapV2SlidingOracle', address: '0xca2e2df6a7a7cf5bd19d112e8568910a6c2d3885', workableFn: 'workable', workFn: 'work' },
+  { name: 'HegicPoolKeep3r',        address: '0x5DDe926b0A31346f2485900C5e64c2577F43F774', workableFn: 'workable', workFn: 'claimRewards' },
+  { name: 'YearnV1EarnKeep3r',      address: '0xe7F4ab593aeC81EcA754Da1B3B7cE0C42a13Ec0C', workableFn: 'workable', workFn: 'work' },
 ];
 
 // Work on jobs if it's needed using a Defender relay signer

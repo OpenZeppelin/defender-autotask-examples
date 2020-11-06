@@ -11,7 +11,7 @@ async function deploy(name) {
 }
 
 describe("autoregister-keeper", function() {
-  const workableNames = ['YearnV1EarnKeep3r', 'HegicPoolKeep3r', 'UniswapOracleV2'];
+  const workableNames = ['YearnV1EarnKeep3r', 'HegicPoolKeep3r', 'UniswapV2SlidingOracle'];
   let workables, registry, jobs, keeper, keeperAddress;
 
   before(async function () {

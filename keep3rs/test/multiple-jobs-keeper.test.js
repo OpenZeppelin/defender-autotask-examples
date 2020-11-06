@@ -10,7 +10,7 @@ async function deploy(name) {
 }
 
 describe("multiple-jobs-keeper", function() {
-  const workableNames = ['YearnV1EarnKeep3r', 'HegicPoolKeep3r', 'UniswapOracleV2'];
+  const workableNames = ['YearnV1EarnKeep3r', 'HegicPoolKeep3r', 'UniswapV2SlidingOracle'];
   let workables, jobs, keeper, keeperAddress;
 
   before(async function () {
