@@ -11,7 +11,7 @@ const ABIs = {
 
 // Definition for all jobs to execute
 const Jobs = [
-  { name: 'UniswapV2SlidingOracle', address: '0xca2e2df6a7a7cf5bd19d112e8568910a6c2d3885', workableFn: 'workable', workFn: 'work' },
+  { name: 'UniswapV2SlidingOracle', address: '0xd20b88Ca8bF84Ca829f7A9Cf0eC64e2bFE91c204', workableFn: 'workable', workFn: 'work' },
   { name: 'HegicPoolKeep3r',        address: '0x5DDe926b0A31346f2485900C5e64c2577F43F774', workableFn: 'workable', workFn: 'claimRewards' },
   { name: 'YearnV1EarnKeep3r',      address: '0xe7F4ab593aeC81EcA754Da1B3B7cE0C42a13Ec0C', workableFn: 'workable', workFn: 'work' },
 ];
