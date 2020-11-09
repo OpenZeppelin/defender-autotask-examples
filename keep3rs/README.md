@@ -1,14 +1,14 @@
 # Defender Autotask examples for keep3r.network
 
-This folder has Autotask scripts for running [Keep3rs](https://docs.keep3r.network/keepers) within the keep3r.network. Refer to this [this step-by-step guide](https://docs.openzeppelin.com/defender/guide-keep3r) on how to run a Keeper for more information. Bear in mind the Keep3r Network 
+This folder has Autotask scripts for running [Keep3rs](https://docs.keep3r.network/keepers) within the keep3r.network. Refer to this [this step-by-step guide](https://docs.openzeppelin.com/defender/guide-keep3r) on how to run a Keeper for more information.
 
-:warning: **The Keep3r Network is currently in beta, use it at your own risk. Available jobs are changing frequently, so make sure to check the latest set of jobs in the [Keep3r Network registry](https://docs.keep3r.network/registry).**
+:warning: **The Keep3r Network is currently in beta, use it at your own risk. Available jobs are changing frequently, so make sure to check the latest set of jobs in the [Keep3r Jobs list](https://keep3r.network/), and update your Autotasks accordingly.**
 
 ## Scripts
 
 - [`simple-keeper`](src/simple-keeper.js) requires a Relayer already activated as a Keeper, and will attempt to execute work from the [`YearnV1EarnKeep3r`](https://etherscan.io/address/0xe7F4ab593aeC81EcA754Da1B3B7cE0C42a13Ec0C) job.
 
-- [`multiple-jobs-keeper`](src/multiple-jobs-keeper.js) requires a Relayer already activated as a Keeper as well, but will attempt to work from the [`HegicPoolKeep3r`](https://etherscan.io/address/0x5DDe926b0A31346f2485900C5e64c2577F43F774), [`UniswapV2SlidingOracle`](https://etherscan.io/address/0xd20b88Ca8bF84Ca829f7A9Cf0eC64e2bFE91c204), and [`YearnV1EarnKeep3r`](https://etherscan.io/address/0xe7F4ab593aeC81EcA754Da1B3B7cE0C42a13Ec0C) jobs.
+- [`multiple-jobs-keeper`](src/multiple-jobs-keeper.js) requires a Relayer already activated as a Keeper as well, but will attempt to work from the [`HegicPoolKeep3r`](https://etherscan.io/address/0x5DDe926b0A31346f2485900C5e64c2577F43F774), [`UniswapV2SlidingOracle`](https://etherscan.io/address/0xCA2E2df6A7a7Cf5bd19D112E8568910a6C2D3885), and [`YearnV1EarnKeep3r`](https://etherscan.io/address/0xe7F4ab593aeC81EcA754Da1B3B7cE0C42a13Ec0C) jobs.
 
 - [`autoregister-keeper`](src/autoregister-keeper.js) will automatically bond the attached Relayer as a Keeper with zero collateral, wait for the activation period to finish, activate the relayer, and then execute the same jobs as `multiple-jobs-keeper`.
 
