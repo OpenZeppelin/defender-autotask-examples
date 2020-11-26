@@ -16,7 +16,7 @@ describe("multiple-jobs-keeper", function() {
   before(async function () {
     workables = await Promise.all(workableNames.map(name => deploy(name)));
     jobs = Jobs.map(job => ({ ...job, address: workables.find(w => w.name === job.name).address }));
-    keeper = await ethers.getSigners().then(signers => signers[1]);
+    keeper = await ethers.getSigners().then(signers => signers[3]);
     keeperAddress = await keeper.getAddress();
   });
 

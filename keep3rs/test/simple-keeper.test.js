@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { main, Jobs } = require("../src/simple-keeper");
+const { main } = require("../src/simple-keeper");
 
 async function deploy(name) {
   const contract = await ethers.getContractFactory(name)
@@ -9,12 +9,12 @@ async function deploy(name) {
   return contract;
 }
 
-describe("multiple-jobs-keeper", function() {
+describe("simple-keeper", function() {
   let workable, keeper, keeperAddress;
 
   before(async function () {
     workable = await deploy('YearnV1EarnKeep3r');
-    keeper = await ethers.getSigners().then(signers => signers[1]);
+    keeper = await ethers.getSigners().then(signers => signers[4]);
     keeperAddress = await keeper.getAddress();
   });
 

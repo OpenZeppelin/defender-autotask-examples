@@ -10,6 +10,8 @@ This folder has Autotask scripts for running [Keep3rs](https://docs.keep3r.netwo
 
 - [`multiple-jobs-keeper`](src/multiple-jobs-keeper.js) requires a Relayer already activated as a Keeper as well, but will attempt to work from the [`HegicPoolKeep3r`](https://etherscan.io/address/0x5DDe926b0A31346f2485900C5e64c2577F43F774), [`UniswapV2SlidingOracle`](https://etherscan.io/address/0xCA2E2df6A7a7Cf5bd19D112E8568910a6C2D3885), and [`YearnV1EarnKeep3r`](https://etherscan.io/address/0xe7F4ab593aeC81EcA754Da1B3B7cE0C42a13Ec0C) jobs.
 
+- [`frequent-keeper`](src/frequent-keeper.js) will execute the same jobs as `multiple-jobs-keeper`, prior to validating that the current Relayer is a Keeper, but will query for available jobs every 5 seconds, and terminate after 1 minute. You can schedule this autotask to run every minute in order to be checking for available jobs on every new block.
+
 - [`autoregister-keeper`](src/autoregister-keeper.js) will automatically bond the attached Relayer as a Keeper with zero collateral, wait for the activation period to finish, activate the relayer, and then execute the same jobs as `multiple-jobs-keeper`.
 
 ## Setup

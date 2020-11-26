@@ -22,6 +22,10 @@ describe("autoregister-keeper", function() {
     keeperAddress = await keeper.getAddress();
   });
 
+  after(function () {
+    mockdate.reset();
+  });
+
   // Emulates autotask run
   const run = () => main(keeper, jobs, registry.address);
 
