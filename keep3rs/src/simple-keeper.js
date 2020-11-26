@@ -1,5 +1,5 @@
 const { ethers } = require("ethers");
-const { DefenderRelaySigner } = require('defender-relay-client/lib/ethers');
+const { DefenderRelaySigner, DefenderRelayProvider } = require('defender-relay-client/lib/ethers');
 
 // Definition for YearnV1EarnKeep3r
 const ABI = [{"inputs":[],"name":"work","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"workable","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"}];
@@ -19,7 +19,7 @@ async function workIfNeeded(signer, address) {
 
 // Entrypoint for the Autotask
 exports.handler = async function(credentials) {
-  const provider = ethers.getDefaultProvider();
+  const provider = new DefenderRelayProvider(credentials);;
   const signer = new DefenderRelaySigner(credentials, provider, { speed: 'fastest' });
   await workIfNeeded(signer, Address);
 }

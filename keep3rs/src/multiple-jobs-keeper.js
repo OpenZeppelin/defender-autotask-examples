@@ -1,5 +1,5 @@
 const { ethers } = require("ethers");
-const { DefenderRelaySigner } = require('defender-relay-client/lib/ethers');
+const { DefenderRelaySigner, DefenderRelayProvider } = require('defender-relay-client/lib/ethers');
 
 // ABIs for jobs and registry (contain only the methods needed, not the full ABIs of the contracts)
 const ABIs = {
@@ -32,7 +32,7 @@ async function workIfNeeded(signer, jobs) {
 
 // Entrypoint for the Autotask
 exports.handler = async function(credentials) {
-  const provider = ethers.getDefaultProvider();
+  const provider = new DefenderRelayProvider(credentials);;
   const signer = new DefenderRelaySigner(credentials, provider, { speed: 'fastest' });
   await workIfNeeded(signer, Jobs);
 }
