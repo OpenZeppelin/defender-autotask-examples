@@ -19,6 +19,7 @@ export default {
   external: [
     ...builtins,
     'ethers',
+    'web3',
     /^defender-relay-client(\/.*)?$/,
   ],
 };
