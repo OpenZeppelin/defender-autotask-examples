@@ -13,7 +13,7 @@ export default {
   plugins: [
     resolve({ preferBuiltins: true }),
     commonjs(),
-    json(),
+    json({ compact: true }),
     typescript(),
   ],
   external: [
