@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "start": "node dist/index.js"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
