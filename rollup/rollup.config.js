@@ -20,6 +20,7 @@ export default {
     ...builtins,
     'ethers',
     'web3',
+    'axios',
     /^defender-relay-client(\/.*)?$/,
   ],
 };
