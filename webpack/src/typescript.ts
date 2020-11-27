@@ -4,7 +4,7 @@ import { DefenderRelayProvider } from 'defender-relay-client/lib/ethers';
 import { ethers } from 'ethers';
 
 // Import an ABI which will be embedded into the generated js
-import IERC20 from '@openzeppelin/contracts/build/contracts/IERC20.json';
+import { abi as erc20ABI } from '@openzeppelin/contracts/build/contracts/IERC20.json';
 
 // Import a dependency not present in the autotask environment which will be included in the js bundle
 import isOdd from 'is-odd';
@@ -15,7 +15,7 @@ const DAI = `0x6b175474e89094c44da98b954eedeac495271d0f`;
 // Entrypoint for the Autotask
 export async function handler(credentials: RelayerParams) {
   const provider = new DefenderRelayProvider(credentials);
-  const dai = new ethers.Contract(DAI, IERC20.abi, provider);
+  const dai = new ethers.Contract(DAI, erc20ABI, provider);
   const atto: ethers.BigNumber = await dai.totalSupply();
   const supply: number = Math.ceil(atto.div(1e18.toString()).toNumber());
   const parity = isOdd(supply) ? 'odd' : 'even';

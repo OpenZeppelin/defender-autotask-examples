@@ -20,18 +20,22 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'commonjs2',
   },
   // Ensure the generated javascript remains readable
   optimization: {
     minimize: false
   },
-  // Do not bundle these dependencies since they are available in the autotasks environment
-  externals: {
-    'aws-sdk': 'aws-sdk',
-    'defender-relay-client': 'defender-relay-client',
+  // Do not bundle these dependencies since they are available in the autotasks environment or they are using just locally
+  externals: [{
     'ethers': 'commonjs2 ethers',
-    'web3': 'web3',
-  },
+    'web3': 'commonjs2 web3',
+    'dotenv': 'commonjs2 dotenv',
+    },
+    ({ request }, callback) => (
+      (/^defender-relay-client/.test(request)) ? callback(null, 'commonjs2 ' + request) : callback()
+    )
+  ],
   // Aim at nodejs
   target: 'node',
 };
