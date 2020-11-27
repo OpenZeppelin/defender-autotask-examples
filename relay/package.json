@@ -1,0 +1,24 @@
+{
+  "name": "defender-relay-demo",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "ethers": "node src/ethers.js",
+    "test": "buidler test"
+  },
+  "devDependencies": {
+    "@nomiclabs/buidler": "^1.4.7",
+    "@nomiclabs/buidler-ethers": "^2.0.0",
+    "@nomiclabs/buidler-waffle": "^2.1.0",
+    "@openzeppelin/contracts": "^3.3.0",
+    "chai": "^4.2.0",
+    "dotenv": "^8.2.0",
+    "ethereum-waffle": "^3.2.0",
+    "mockdate": "^3.0.2"
+  },
+  "dependencies": {
+    "defender-relay-client": "1.1.1-rc.0",
+    "ethers": "5.0.3"
+  }
+}
