@@ -30,7 +30,7 @@ type EnvInfo = {
   API_SECRET: string;
 };
 
-// To run locally (this code will not be executed in Autotasks)
+// To run locally (this code will not be executed in Autotasks environment, only when executed directly via `yarn start`)
 if (require.main === module) {
   require('dotenv').config();
   const { API_KEY: apiKey, API_SECRET: apiSecret } = process.env as EnvInfo;
