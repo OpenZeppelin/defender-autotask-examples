@@ -24,7 +24,7 @@
     "@nomiclabs/buidler-waffle": "^2.1.0",
     "@openzeppelin/buidler-upgrades": "^1.0.2",
     "@openzeppelin/contracts": "^3.2.0",
-    "axios": "^1.6.0",
+    "axios": "^1.6.1",
     "chai": "^4.2.0",
     "dotenv": "^8.2.0",
     "ethereum-waffle": "^3.2.0",
