@@ -19,7 +19,7 @@
     "typescript": "^4.1.2"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^3.3.0",
+    "@openzeppelin/contracts": "^4.9.6",
     "defender-relay-client": "^1.1.0",
     "dotenv": "^8.2.0",
     "ethers": "5.0.3",
